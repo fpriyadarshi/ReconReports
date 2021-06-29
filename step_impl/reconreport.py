@@ -83,13 +83,14 @@ class Test_URL():
     driver = None
     driver_wait = None
     logger = None
+    today = datetime.today()
+    oppDateToday = today.strftime("%Y%m%d%H%M%S")            
+    loggerFileName = os.path.dirname(os.path.dirname(__file__)) + "\\logs\\" + f"RR_LOG_{oppDateToday}.txt"
 
     def __init__(self):
         try:
             # Initiate Logger
-            today = date.today()
-            oppDateToday = today.strftime("%Y%m%d")            
-            loggerFileName = os.path.dirname(os.path.dirname(__file__)) + "\\logs\\" + f"RR_LOG_{oppDateToday}.txt"
+            
 
             self.logger = logging.getLogger(os.getenv('ORG_TYPE'))
             
@@ -98,7 +99,7 @@ class Test_URL():
                 format = logging.Formatter(
                     '%(asctime)s >> %(name)s >> %(levelname)s >> %(message)s')
 
-                fileHandler = logging.FileHandler(loggerFileName)
+                fileHandler = logging.FileHandler(self.loggerFileName)
                 fileHandler.setLevel(logging.INFO)
                 fileHandler.setFormatter(format)
 
@@ -545,7 +546,7 @@ class Test_URL():
                 "Content-Disposition",
                 f"attachment; filename= {zipFileName}",
             )
-
+            
             # Add attachment to message and convert message to string
             message.attach(part)
             text = message.as_string()
