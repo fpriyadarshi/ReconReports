@@ -9,3 +9,4 @@ def run_recon_report():
     rr.test_loginSalesForce()
     rr.test_ExportReports()
     rr.test_sendMail()
+    rr.test_close_browser()

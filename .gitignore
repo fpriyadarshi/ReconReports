@@ -10,3 +10,6 @@ reports
 # Gauge - python compiled files
 *.pyc
 
+# CSV files
+*.csv
+reports_for_recon/*.csv

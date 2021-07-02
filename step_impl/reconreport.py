@@ -125,6 +125,9 @@ class Test_URL():
             
             self.logger.exception(f"{exc_type} == {fname} == {exc_tb.tb_lineno}")
 
+    def test_close_browser(self):
+        self.driver.quit()
+
     def zipdir(self):
         try:
             currentDate = date.today()
@@ -436,19 +439,19 @@ class Test_URL():
                         with tag('table'):
                             with tag('tbody'):
                                 with tag('tr'):
-                                    with tag('td', bgcolor="#bf8040", align="center"):
+                                    with tag('td', bgcolor="#AEA4A2", align="center"):
                                         text('SR NO.')
-                                    with tag('td', bgcolor="#bf8040", align="center"):
+                                    with tag('td', bgcolor="#AEA4A2", align="center"):
                                         text('REPORT NAME')
-                                    with tag('td', bgcolor="#bf8040", align="center"):
+                                    with tag('td', bgcolor="#AEA4A2", align="center"):
                                         text('RECORD COUNT')
                             for i, (k, v) in enumerate(self.recordCountMap.items()):
                                 with tag('tr'):
-                                    with tag('td', align="center", bgcolor="#CCCC00" if int(v) > 0 else "#32C896"):
+                                    with tag('td', align="center", bgcolor="#FA8072" if int(v) > 0 else "#08c96b"):
                                         text(i + 1)
-                                    with tag('td', align="center", bgcolor="#CCCC00" if int(v) > 0 else "#32C896"):
+                                    with tag('td', align="center", bgcolor="#FA8072" if int(v) > 0 else "#08c96b"):
                                         text(k)
-                                    with tag('td', align="center", bgcolor="#CCCC00" if int(v) > 0 else "#32C896"):
+                                    with tag('td', align="center", bgcolor="#FA8072" if int(v) > 0 else "#08c96b"):
                                         text(f"{v} - RECORD(S) FOUND")
 
                     with tag('font', face="Consolas"):
