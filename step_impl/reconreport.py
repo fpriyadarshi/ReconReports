@@ -271,7 +271,7 @@ class Test_URL():
                 imgSalesforce.click()
                 main_window = driver.current_window_handle
                 sleep(10)
-                driver.switch_to.window(driver.window_handles[1])
+                # driver.switch_to.window(driver.window_handles[1])
         except Exception as e:
             exc_type, exc_obj, exc_tb = sys.exc_info()
             fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
@@ -284,7 +284,7 @@ class Test_URL():
 
             wait = WebDriverWait(self.driver, 720)
             driver = self.driver
-            driver.switch_to.window(driver.window_handles[-1])
+            # driver.switch_to.window(driver.window_handles[-1])
 
             allTabs = driver.find_element_by_xpath("//img[@title='All Tabs']")
             allTabs.click()
