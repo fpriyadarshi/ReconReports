@@ -114,9 +114,9 @@ class Test_URL():
             prefs = {"download.default_directory": downloadPath, 'download.directory_upgrade': True}
             chrome_options = webdriver.ChromeOptions()
             chrome_options.add_experimental_option("prefs", prefs)
-            chrome_options.add_argument('--disable-application-cache')
+            # chrome_options.add_argument('--disable-application-cache')
             self.driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=chrome_options)
-            driver_wait = WebDriverWait(self.driver, 10, poll_frequency=1, ignored_exceptions=[
+            driver_wait = WebDriverWait(self.driver, 30, poll_frequency=1, ignored_exceptions=[
                                ElementNotVisibleException, ElementNotSelectableException])
             self.logger.info(f"Web Driver Initiated Successfully")
         except Exception as e:
