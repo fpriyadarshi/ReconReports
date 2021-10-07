@@ -115,7 +115,7 @@ class Test_URL():
             chrome_option = webdriver.ChromeOptions()
             chrome_option.add_experimental_option("prefs", prefs)
             # chrome_options.add_argument('--disable-application-cache')
-            self.driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=chrome_option)
+            self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_option)
             driver_wait = WebDriverWait(self.driver, 30, poll_frequency=1, ignored_exceptions=[
                                ElementNotVisibleException, ElementNotSelectableException])
             self.logger.info(f"Web Driver Initiated Successfully")
