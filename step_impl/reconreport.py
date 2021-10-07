@@ -265,9 +265,10 @@ class Test_URL():
                 btnSignin.click()
                 self.logger.info(f"User {os.getenv('OKTA_ID')} logged in by {os.getenv('LOGIN_BY')}")
 
-                wait.until(EC.visibility_of_element_located((By.XPATH, "//a[img[@alt='Graphic Link Salesforce']]")))
+                # wait.until(EC.visibility_of_element_located((By.XPATH, "//a[img[@alt='Graphic Link Salesforce']]")))
+                wait.until(EC.visibility_of_element_located((By.XPATH, "//h1[text()='Salesforce']")))
 
-                imgSalesforce = driver.find_element_by_xpath("//a[img[@alt='Graphic Link Salesforce']]")
+                imgSalesforce = driver.find_element_by_xpath("//h1[text()='Salesforce']")
 
                 imgSalesforce.click()
                 main_window = driver.current_window_handle
